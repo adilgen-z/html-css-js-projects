@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+  
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+ 
+   
+
+}
+.banner .slider{
+position: absolute;
+width: 200px;
+height: 250px;
+top: 5%;
+left: calc(50% - 100px);
+transform-style: preserve-3d;
+transform: perspective(1000px);
+animation: autorun 50s linear infinite;
+z-index: 2;
+}
+
+@keyframes autorun{
+    from{
+        transform: perspective(1000px) rotateX(-10deg) rotateY(0deg);   
+    }
+    to{
+        transform: perspective(1000px) rotateX(-10deg) rotateY(360deg);
+        }
+}
+.banner .slider .item{
+    position: absolute;
+
+    inset: 0 0 0 0;
+transform: 
+rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg) )
+translateZ(400px);
+}
+.banner .slider .item1{
+    position: absolute;
+
+   
+
+}
+.banner .slider .item img{
+    width: 65%;
+
+    height: 65%;
+   object-fIt: cover;
+}
+.banner .slider .item1 video{
+    width: 100%;
+cursor: pointer;
+
+    height: 100%;
+   object-fIt: cover;
+}
+ .banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 20px;
+    display: flex;
+    z-index: 1;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+
+ }
+.banner .content h1{
+    font-size: 6em;
+    left: 10%;
+    line-height: 1em;
+    color: #0d0f19;
+    position: relative;
+}
+.banner .content h1:after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    -webkit-text-stroke: 2px #d2d2d2;
+    z-index: 2;
+    color: transparent;
+}
+.banner .content .author{
+
+    max-width: 300px;
+}
+.banner .content h2{
+    font-size: 3em;
+
+}
+.banner .content .model{
+    background-image: url(images.jpg);
+    width: 100%;
+    height: 70vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+    z-index: 1;
+    background-position: top center;
+
+
+}
